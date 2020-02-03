@@ -1,8 +1,6 @@
 'use strict';
 
 
-'use strict';
-
 const mongoose = require('mongoose');
 require('../products/products-schema.js');
 
