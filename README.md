@@ -7,9 +7,8 @@
 ### Links and Resources
 
 - [submission PR](https://github.com/Saja-401-advanced-javascript/class-09/pull/1)
-- [ci/cd](http://xyz.com) (GitHub Actions)
-- [back-end server url](http://xyz.com) (when applicable)
-- [front-end application](http://xyz.com) (when applicable)
+- [ci/cd](https://github.com/Saja-401-advanced-javascript/class-09/runs/425071259?check_suite_focus=true)
+
 
 ### Setup
 
@@ -32,4 +31,4 @@ PORT=6000
 
 #### UML
 
-![]()
+![](img/class-09.jpg)
