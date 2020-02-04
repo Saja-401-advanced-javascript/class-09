@@ -41,11 +41,9 @@ describe('CATEGORY API', () => {
     return mockRequest.post('/api/v1/categories')
       .send(testCategory)
       .then(data => {
-                console.log('******////////////*******', data.body.id);
-
-        return mockRequest.get(`/api/v1/categories/${data.body.id}`)
+        let record = data.body;
+        return mockRequest.get(`/api/v1/categories/${data.body._id}`)
           .then(item => {
-            let record = item.body;
             Object.keys(testCategory).forEach(key => {
               expect(record[key]).toEqual(testCategory[key]);
             });
@@ -122,20 +120,20 @@ describe('PRODUCT API', () => {
   });
 
   it('can get() one product', () => {
-    let testProduct ={ category:'Gotci', name: 'hat', displayName: 'leather hats', description: 'hats with black leather' };
+    let testProduct = { category:'Gotci', name: 'hat', displayName: 'leather hats', description: 'hats with black leather' };
     return mockRequest.post('/api/v1/products')
       .send(testProduct)
       .then(data => {
-
+        let record = data.body;
         return mockRequest.get(`/api/v1/products/${data.body._id}`)
           .then(item => {
-            let record = item.body;
             Object.keys(testProduct).forEach(key => {
               expect(record[key]).toEqual(testProduct[key]);
             });
           });
       });
   });
+
 
 
   it('can put() a product', () => {
