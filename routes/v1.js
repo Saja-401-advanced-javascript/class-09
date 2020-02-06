@@ -15,18 +15,18 @@ const products = require('../models/products/products.js');
 function getModel(req, res, next) {
   let model = req.params.model; // dynamic model
   switch (model) {
-    case "products":
-      req.model = products;
-      next();
-      return;
-    case "categories":
-      req.model = categories
-      // products and categories come from the requires up above
-      next();
-      return;
-    default:
-      next('model not found'); // if we pass smth in the next, if u wrote ur error middleware correctly, it moves it to the error hanling 
-      return;
+  case 'products':
+    req.model = products;
+    next();
+    return;
+  case 'categories':
+    req.model = categories;
+    // products and categories come from the requires up above
+    next();
+    return;
+  default:
+    next('model not found'); // if we pass smth in the next, if u wrote ur error middleware correctly, it moves it to the error hanling 
+    return;
   }
 }
 
@@ -53,7 +53,7 @@ function handleGetOne(req, res, next) {
   let id = req.params.id;
   req.model.get(id)
     .then(record => {
-      res.json(record)
+      res.json(record);
     }).catch(next);
 }
 
