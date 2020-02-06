@@ -9,14 +9,14 @@ describe('CATEGORY API', () => {
   it('post a new category item', () => {
     let testCategory = { name: 'hat', displayName: 'leather hats', description: 'hats with black leather' };
     return mockRequest.post('/api/v1/categories')
-    .send(testCategory)
+      .send(testCategory)
       .then(data => {
         console.log('***********', data.body);
         let record = data.body;
         Object.keys(testCategory).forEach(key => {
           expect(record[key]).toEqual(testCategory[key]);
         });
-      })
+      });
   });
 
 
