@@ -1,14 +1,14 @@
-'use strict';
+
 
 const express = require('express');
-const router = express.Router();
+const router = express.router();
 
 const categories = require('../models/categories/categories.js');
 const products = require('../models/products/products.js');
 
 // route param: call an id
 // router param : creating a callback function with (req res next) that can attach things to the request parameters
-// as follow : req parameters call an id, that need to tell me url  
+// as follow : req parameters call an id, that need to tell me url
 // middle ware can modify the request
 
 // getModel is a middleware function that we gonna pass it in a rout
@@ -80,7 +80,7 @@ function handleDelete(req, res, next) {
   // console.log(id)
   // console.log(req.model)
   req.model.delete(id)
-    .then(data => {
+    .then(() => {
       res.json(mess);
     }).catch(next);
 }

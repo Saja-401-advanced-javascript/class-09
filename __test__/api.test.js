@@ -28,7 +28,7 @@ describe('CATEGORY API', () => {
       .then(data => {
         let record = data.body;
         return mockRequest.get('/api/v1/categories')
-          .then(item => {
+          .then(() => {
             Object.keys(testCategory).forEach(key => {
               expect(record[key]).toEqual(testCategory[key]);
             });
@@ -43,7 +43,7 @@ describe('CATEGORY API', () => {
       .then(data => {
         let record = data.body;
         return mockRequest.get(`/api/v1/categories/${data.body._id}`)
-          .then(item => {
+          .then(() => {
             Object.keys(testCategory).forEach(key => {
               expect(record[key]).toEqual(testCategory[key]);
             });
@@ -111,7 +111,7 @@ describe('PRODUCT API', () => {
       .then(data => {
         let record = data.body;
         return mockRequest.get('/api/v1/products/1')
-          .then(item => {
+          .then(() => {
             Object.keys(testProduct).forEach(key => {
               expect(record[key]).toEqual(testProduct[key]);
             });
@@ -126,7 +126,7 @@ describe('PRODUCT API', () => {
       .then(data => {
         let record = data.body;
         return mockRequest.get(`/api/v1/products/${data.body._id}`)
-          .then(item => {
+          .then(() => {
             Object.keys(testProduct).forEach(key => {
               expect(record[key]).toEqual(testProduct[key]);
             });
@@ -137,7 +137,7 @@ describe('PRODUCT API', () => {
 
 
   it('can put() a product', () => {
-    let testProduct ={ category:'Gotci', name: 'hat', displayName: 'leather hats', description: 'hats with black leather' };
+    let testProduct = { category:'Gotci', name: 'hat', displayName: 'leather hats', description: 'hats with black leather' };
     return mockRequest.post('/api/v1/products')
       .send(testProduct)
       .then(data => {
