@@ -29,5 +29,6 @@ categories.pre('findOne', function(){
     }
 })
 
+// console.log('[[[[[[[[[[[[[', mongoose.model('categories', categories));
 
 module.exports = mongoose.model('categories', categories); // 'categories' is the collection name

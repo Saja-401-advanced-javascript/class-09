@@ -2,7 +2,27 @@ const { server } = require('../lib/server.js');
 const supergose = require('@code-fellows/supergoose');
 const mockRequest = supergose(server);
 
+describe('404, 500 tests', () => {
 
+  it('responds with a 500 on error', () => {
+    return mockRequest
+      .get('/error')
+      .then(results =>{
+        expect(results.status).toBe(500);
+      })
+      .catch(console.error);
+  });
+
+  it('responds with a 404 if a route is not found', () => {
+    return mockRequest
+      .get('/whatever')
+      .then(results =>{
+        expect(results.status).toBe(404);
+      })
+      .catch(console.error);
+  });
+
+})
 
 
 describe('CATEGORY API', () => {
@@ -11,7 +31,7 @@ describe('CATEGORY API', () => {
     return mockRequest.post('/api/v1/categories')
       .send(testCategory)
       .then(data => {
-        console.log('***********', data.body);
+        // console.log('***********', data.body);
         let record = data.body;
         Object.keys(testCategory).forEach(key => {
           expect(record[key]).toEqual(testCategory[key]);
@@ -110,7 +130,7 @@ describe('PRODUCT API', () => {
       .send(testProduct)
       .then(data => {
         let record = data.body;
-        return mockRequest.get('/api/v1/products/1')
+        return mockRequest.get('/api/v1/products')
           .then(() => {
             Object.keys(testProduct).forEach(key => {
               expect(record[key]).toEqual(testProduct[key]);

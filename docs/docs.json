@@ -1,0 +1,142 @@
+{
+    "openapi" : "3.0.1",
+    "info" : {
+      "title" : "defaultTitle",
+      "description" : "defaultDescription",
+      "version" : "0.1"
+    },
+    "servers" : [ {
+      "url" : "http://localhost:4000"
+    } ],
+    "paths" : {
+      "/api/v1/categories/5e3d37f90a5b9b29fa80190d" : {
+        "put" : {
+          "description" : "Auto generated using Swagger Inspector",
+          "requestBody" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "displayName" : {
+                      "type" : "string"
+                    },
+                    "__v" : {
+                      "type" : "integer"
+                    },
+                    "name" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    },
+                    "_id" : {
+                      "type" : "string"
+                    },
+                    "id" : {
+                      "type" : "string"
+                    }
+                  }
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : " {\r\n            \"_id\": \"5e3d37f90a5b9b29fa80190d\",\r\n            \"name\": \"jackets\",\r\n            \"displayName\": \"silk\",\r\n            \"description\": \"hatss\",\r\n            \"__v\": 0,\r\n            \"id\": \"5e3d37f90a5b9b29fa80190d\"\r\n        }\r\n  "
+                  },
+                  "1" : {
+                    "value" : " {\r\n            \"_id\": \"5e3d37f90a5b9b29fa80190d\",\r\n            \"name\": \"jackets\",\r\n            \"displayName\": \"silk\",\r\n            \"description\": \"hatss\",\r\n            \"__v\": 0,\r\n            \"id\": \"5e3d37f90a5b9b29fa80190d\"\r\n        }\r\n  "
+                  }
+                }
+              }
+            }
+          },
+          "responses" : {
+            "200" : {
+              "description" : "Auto generated using Swagger Inspector",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:4000"
+          } ]
+        },
+        "delete" : {
+          "description" : "Auto generated using Swagger Inspector",
+          "responses" : {
+            "200" : {
+              "description" : "Auto generated using Swagger Inspector",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:4000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:4000"
+        } ]
+      },
+      "/api/v1/categories" : {
+        "post" : {
+          "description" : "Auto generated using Swagger Inspector",
+          "requestBody" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "displayName" : {
+                      "type" : "string"
+                    },
+                    "name" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : " {\r\n            \"name\": \"jackets\",\r\n            \"displayName\": \"leather\",\r\n            \"description\": \"hatss\"\r\n            \r\n        }\r\n  "
+                  }
+                }
+              }
+            }
+          },
+          "responses" : {
+            "200" : {
+              "description" : "Auto generated using Swagger Inspector",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:4000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:4000"
+        } ]
+      }
+    }
+  }

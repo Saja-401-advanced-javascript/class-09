@@ -1,10 +1,17 @@
+'use strict';
 
+/**
+ * API Router Module (V1)
+ * Integrates with various models through a common Interface (.get(), .post(), .put(), .delete())
+ * @module routes/v1
+ */
 
 const express = require('express');
-const router = express.router();
+const router = express.Router();
 
 const categories = require('../models/categories/categories.js');
 const products = require('../models/products/products.js');
+// console.log('/////////', categories);
 
 // route param: call an id
 // router param : creating a callback function with (req res next) that can attach things to the request parameters
@@ -32,14 +39,40 @@ function getModel(req, res, next) {
 
 router.param('model', getModel);
 
+
+// API Routes
+/**
+ * Get a list of records for a given model
+ * Model must be a proper model, located within the ../models folder
+ * @route GET /api/v1/{model}
+ * @param {model} model.path - Model Name
+ * @security basicAuth
+ * @returns {object} 200 { count: 2, results: [ {}, {} ] }
+ * @returns {Error}  500 - Server error
+ */
 router.get('/api/v1/:model', handleGetAll);
+
+
+/**
+ * @route POST /api/v1/:model
+ * Model must be a proper model, located within the ../models folder
+ * @param {model} model.path.required
+ * @returns {object} 200 - Count of results with an array of results
+ * @returns {Error}  500 - Unexpected error
+ */
 router.post('/api/v1/:model', handlePost);
+
+
+
+
 router.get('/api/v1/:model/:id', handleGetOne);
 router.put('/api/v1/:model/:id', handlePut);
 router.delete('/api/v1/:model/:id', handleDelete);
 
 
 function handleGetAll(req, res, next) {
+  // console.log('*************', req.model);
+  
   req.model.get()
     .then(results => {
       // console.log(id)

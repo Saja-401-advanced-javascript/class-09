@@ -1,7 +1,7 @@
 {
   "name": "class-09",
   "version": "1.0.0",
-  "description": "",
+  "description": "## API Server",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
@@ -28,5 +28,9 @@
     "jest": "^25.1.0",
     "mongoose": "^5.8.10",
     "morgan": "^1.9.1"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {}
 }
