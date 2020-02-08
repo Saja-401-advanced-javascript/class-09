@@ -30,7 +30,9 @@ PORT=6000
 
 ### Review
 
-* delete unnecessary comment lines inside your files
+* Delete unnecessary comment lines inside your files.
 
-- 
+* Use `use strict;` and get an eslint ignore for it.
+
+* I recommend for you to use eslint extension to your editor, it will make it easy for you to see lint errors while you  are typing your code.
 
