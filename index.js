@@ -1,3 +1,4 @@
+/* eslint-disable strict */
 'use strict';
 
 const server = require ('./lib/server.js');
@@ -9,8 +10,8 @@ dotenv.config();
 const mongooseOptions = {
   useNewUrlParser: true,
   useCreateIndex: true,
-  useUnifiedTopology: true
-}
+  useUnifiedTopology: true,
+};
 
 mongoose.connect(process.env.MONGODB_URI, mongooseOptions);
 server.start(process.env.PORT);
